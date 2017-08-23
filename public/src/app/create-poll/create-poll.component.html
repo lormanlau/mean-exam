@@ -1,0 +1,57 @@
+<div>
+	<a [routerLink]="['/dashboard']">Cancel</a>
+	<form #form="ngForm">
+		<h3>Put the question and options here:</h3>
+		<p> Question:
+			<input 
+			type="text" 
+			name="q_text"
+			minlength="8" 
+			required
+			[(ngModel)]="poll.q_text"
+			#q_text="ngModel">
+			<span *ngIf="q_text.errors">Needs 8 Characters</span>
+		</p>
+		<p> Option 1:
+			<input 
+			type="text" 
+			name="text1"
+			minlength="3" 
+			required
+			[(ngModel)]="poll.option0.text"
+			#text1="ngModel">
+			<span *ngIf="text1.errors">Needs 3 Characters</span>
+		</p>
+		<p> Option 2:
+			<input 
+			type="text" 
+			name="text2"
+			minlength="3" 
+			required
+			[(ngModel)]="poll.option1.text"
+			#text2="ngModel">
+			<span *ngIf="text2.errors">Needs 3 Characters</span>
+		</p>
+		<p> Option 3:
+			<input 
+			type="text" 
+			name="text3"
+			minlength="3" 
+			required
+			[(ngModel)]="poll.option2.text"
+			#text3="ngModel">
+			<span *ngIf="text3.errors">Needs 3 Characters</span>
+		</p>
+		<p> Option 4:
+			<input 
+			type="text" 
+			name="text4"
+			minlength="3" 
+			required
+			[(ngModel)]="poll.option3.text"
+			#text4="ngModel">
+			<span *ngIf="text4.errors">Needs 3 Characters</span>
+		</p>
+		<input [routerLink]="['/dashboard']" [disabled]="!form.valid" (click)="submitPoll()" type="submit" value="Create Poll">
+	</form>
+</div>

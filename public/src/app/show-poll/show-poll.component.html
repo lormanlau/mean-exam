@@ -1,0 +1,34 @@
+<div>
+	<nav>
+		<a [routerLink]="['/dashboard']">Go to Polls</a>
+	</nav>
+	<h3>{{poll.q_text}}</h3>
+	<p>Click the Vote Button to choose one</p>
+	<table>
+		<tr>
+			<th>Option</th>
+			<th>Current Count of Votes</th>
+			<th>Action</th>
+		</tr>
+		<tr>
+			<td>{{poll.option0.text}}</td>
+			<td>{{poll.option0.vote}}</td>
+			<td><input (click)="vote('option0')" type="submit" value="vote"></td>
+		</tr>
+		<tr>
+			<td>{{poll.option1.text}}</td>
+			<td>{{poll.option1.vote}}</td>
+			<td><input (click)="vote('option1')" type="submit" value="vote"></td>
+		</tr>
+		<tr>
+			<td>{{poll.option2.text}}</td>
+			<td>{{poll.option2.vote}}</td>
+			<td><input (click)="vote('option2')" type="submit" value="vote"></td>
+		</tr>
+		<tr>
+			<td>{{poll.option3.text}}</td>
+			<td>{{poll.option3.vote}}</td>
+			<td><input (click)="vote('option3')" type="submit" value="vote"></td>
+		</tr>
+	</table>
+</div>

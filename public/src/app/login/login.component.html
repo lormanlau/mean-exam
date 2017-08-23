@@ -1,0 +1,17 @@
+<div>
+	<form #form="ngForm">
+		<p> Your Name:
+			<input 
+			type="text" 
+			name="name"
+			required
+			minlength="2" 
+			[(ngModel)]="user.name"
+			#name="ngModel">
+			<span *ngIf="name.errors">Name needs to be at least 2 characters long</span>
+		</p>
+		<p>
+			<input [disabled]="!form.valid" (click)="onClick()"[routerLink]="['/dashboard']" type="submit" value="Login">
+		</p>
+	</form>
+</div>
